@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import beachImg from "../assets/beach.jpg";
+import beachImg from "../assets/beaach.jpg";
 import templeImg from "../assets/temple.jpg";
 
 import {
