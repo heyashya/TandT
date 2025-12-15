@@ -3,7 +3,8 @@ import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Destination from '../components/Destination'
 import Footer from '../components/Footer'
-import HomeImg from "../assets/home.png"
+import HomeImg from "../assets/vix.jpg"
+import AboutUs from '../components/AboutUs'
 
 
 export default function Home() {
@@ -24,7 +25,7 @@ export default function Home() {
             <Destination/>
 
 
-
+<AboutUs/>
             <Footer/>
 
         </>

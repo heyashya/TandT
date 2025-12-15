@@ -1,41 +1,190 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
+import beachImg from "../assets/beach.jpg";
+import templeImg from "../assets/temple.jpg";
+
+import {
+  FaMapMarkedAlt,
+  FaUsers,
+  FaLeaf,
+  FaSuitcaseRolling,
+  FaHeadset,
+} from "react-icons/fa";
+
+ 
 
 export default function AboutUs() {
-    return (
-        <>
+  const containerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { staggerChildren: 0.25, duration: 0.3 },
+    },
+  };
 
-            <div className="about-content">
-                <p className="about-us">
-                    Welcome to <span>WanderFunk</span> your trusted partner in discovering the hidden gems and uncharted beauty of India. Our journey began with a simple yet profound belief - that every corner of this incredible country holds a story waiting to be explored. We are not just a travel agency; we are your companions on a voyage of discovery, dedicated to unraveling the rich tapestry of India's culture, heritage, and natural splendor.
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  };
+
+  return (
+    <section className="bg-gradient-to-b from-yellow-50  to-gray-500 py-20 px-6 lg:px-24">
+      {/* HEADER */}
+      <motion.div
+        className="text-center mb-20"
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9 }}
+        viewport={{ once: true }}
+      >
+        <h1 className="text-4xl lg:text-5xl font-extrabold mb-4 text-gray-800">
+          About Us
+        </h1>
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          Welcome to{" "}
+          <span className="font-extrabold text-yellow-700">AWtravles</span> —
+          your trusted partner in discovering India's hidden gems and
+          uncharted beauty.
+        </p>
+      </motion.div>
+
+      {/* IMAGE SECTION */}
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-24"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <div className="overflow-hidden rounded-2xl shadow-xl">
+          <img src={beachImg} alt="Beach" className="w-full h-80 object-cover hover:scale-105 transition duration-700" />
+          {/* <div className="h-80 bg-gray-200 flex items-center justify-center text-gray-500">
+            Beach Image
+          </div> */}
+        </div>
+
+        <div className="overflow-hidden rounded-2xl shadow-xl">
+          <img src={templeImg} alt="Mountains" className="w-full h-80 object-cover hover:scale-105 transition duration-700" />
+          {/* <div className="h-80 bg-gray-300 flex items-center justify-center text-gray-600">
+            Mountain Image
+          </div> */}
+        </div>
+      </motion.div>
+
+      {/* MAIN CONTENT */}
+      <motion.div
+        className="space-y-16 max-w-5xl mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {/* INTRO */}
+        <motion.p
+          variants={itemVariants}
+          className="text-gray-700 text-lg leading-relaxed text-center"
+        >
+          Our journey began with a simple yet powerful belief — every corner of
+          India has a story waiting to be explored. We are not just a travel
+          agency; we are your companions in uncovering culture, heritage, and
+          breathtaking landscapes.
+        </motion.p>
+
+        {/* MISSION */}
+        <motion.div
+          variants={itemVariants}
+          className="bg-white rounded-2xl shadow-lg p-8"
+        >
+          <h2 className="text-2xl font-bold text-gray-800 uppercase tracking-wide mb-4">
+            Our Mission
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            To curate unforgettable journeys that go beyond tourist hotspots,
+            immersing travelers in authentic Indian experiences through local
+            traditions, nature, and culture.
+          </p>
+        </motion.div>
+
+        {/* WHY CHOOSE US */}
+        <motion.div
+          variants={itemVariants}
+          className="bg-white rounded-2xl shadow-lg p-8"
+        >
+          <h2 className="text-2xl font-bold text-gray-800 uppercase tracking-wide mb-8 text-center">
+            Why Choose AWtravles?
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              {
+                icon: <FaMapMarkedAlt />,
+                text: "Personalized Adventures tailored for every traveler.",
+              },
+              {
+                icon: <FaUsers />,
+                text: "Local Expertise to uncover hidden treasures.",
+              },
+              {
+                icon: <FaLeaf />,
+                text: "Responsible Tourism with eco-friendly practices.",
+              },
+              {
+                icon: <FaSuitcaseRolling />,
+                text: "Hassle-Free Planning from start to finish.",
+              },
+              {
+                icon: <FaHeadset />,
+                text: "24/7 Support before, during, and after travel.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                className="flex items-start gap-4 p-5 rounded-xl bg-gray-50 hover:bg-yellow-50 transition"
+              >
+                <div className="text-yellow-500 text-2xl mt-1">
+                  {item.icon}
+                </div>
+                <p className="text-gray-700 text-lg font-medium">
+                  {item.text}
                 </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
-                <h2>Our Mission</h2>
-                <p>Our mission is clear - to help you embark on unforgettable journeys that transcend tourist hotspots and take you to the heart of authentic India. We're committed to curating experiences that not only showcase the picturesque landscapes but also immerse you in the vibrant traditions and warm hospitality of this diverse nation.</p>
+        {/* JOIN US */}
+        <motion.div
+          variants={itemVariants}
+          className="bg-white rounded-2xl shadow-lg p-8"
+        >
+          <h2 className="text-2xl font-bold text-gray-800 uppercase tracking-wide mb-4">
+            Join Us
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            From Kerala’s serene backwaters to Himachal’s remote villages,
+            Odisha’s ancient temples, and the untamed Northeast — AWtravles
+            transforms journeys into lifelong memories.
+          </p>
+        </motion.div>
 
-                <h2>Why Choose Explore India?</h2>
-                <ul>
-                    <li>Personalized Adventures: At Explore India, we understand that no two travelers are alike. That's why we tailor-make each itinerary to match your interests, preferences, and travel style. Whether you're an adrenaline junkie seeking thrilling escapades or a culture enthusiast eager to delve into the local way of life, we've got you covered.</li>
-
-                    <li> Local Expertise: Our team of travel experts boasts an intimate knowledge of India. We're not just pointing you to the famous landmarks but introducing you to the hidden treasures, lesser-known festivals, and off-the-beaten-path experiences that make India truly special.</li>
-
-                    <li>Responsible Tourism: We believe in traveling with a conscience. Our commitment to responsible tourism ensures that your exploration leaves a positive impact on the communities you visit and the environment you encounter. We prioritize eco-friendly practices, support local artisans, and promote sustainable tourism.</li>
-
-                    <li>Hassle-Free Planning: Leave the logistics to us. From transportation and accommodation to permits and guides, we handle all the nitty-gritty details, so you can focus on savoring the journey. Traveling with us means peace of mind and smooth, stress-free adventures.</li>
-
-                    <li>Unwavering Support: Your journey with Explore India is not confined to your travel dates. We're here for you before, during, and after your trip. Our 24/7 customer support ensures that you have a helping hand at every step of your expedition.</li>
-                </ul>
-
-                <h2>Join Us in Uncovering India's Best-Kept Secrets</h2>
-
-                <p>Come, join us in discovering the real essence of India. Be it the serene backwaters of Kerala, the remote villages of Himachal Pradesh, the ancient temples of Odisha, or the untamed beauty of the Northeast, there's an India waiting to be explored, and we're here to make it happen.</p>
-
-                <h2>Contact Us</h2>
-
-                <p>Ready to embark on your next adventure? Get in touch with us today, and let's craft a personalized itinerary that will take you on an unforgettable journey through the heart and soul of India. Explore India with us - where every trip is a story waiting to be written.</p>
-            </div>
-
-
-
-        </>
-    )
+        {/* CONTACT */}
+        <motion.div
+          variants={itemVariants}
+          className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black rounded-2xl shadow-xl p-10 text-center"
+        >
+          <h2 className="text-2xl font-bold uppercase tracking-wide mb-4">
+            Contact Us
+          </h2>
+          <p className="text-lg font-medium">
+            Ready for your next adventure? Reach out today and let us craft a
+            personalized itinerary. With AWtravles, every trip becomes a story
+            worth telling.
+          </p>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
 }

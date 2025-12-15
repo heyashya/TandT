@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
-import serviceImg from "../assets/service.png"
+import serviceImg from "../assets/rafting.jpg"
 import Trip from '../components/Trip'
 import Footer from '../components/Footer'
 
