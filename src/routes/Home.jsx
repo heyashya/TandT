@@ -22,7 +22,10 @@ export default function Home() {
                 buttonText=""
             />
 
-            <Destination/>
+           <div className="overflow-x-hidden">
+  <Destination />
+</div>
+
 
 
 <AboutUs/>

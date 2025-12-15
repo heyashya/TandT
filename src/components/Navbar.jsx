@@ -69,7 +69,7 @@ class Navbar extends Component {
             {/* LOGO */}
             <h1
               className={`text-2xl font-bold ${
-                scrolled ? "text-black" : "text-yellow-400"
+                scrolled ? "text-black" : "text-purple-900"
               }`}
             >
               AWTravels
@@ -85,7 +85,7 @@ class Navbar extends Component {
                     className={({ isActive }) =>
                       `text-lg font-semibold transition ${
                         isActive
-                          ? "border-b-4 border-yellow-300 text-yellow-400"
+                          ? "border-b-4 border-yellow-300 text-purple-900"
                           : scrolled
                           ? "text-black"
                           : "text-white"
@@ -111,6 +111,7 @@ class Navbar extends Component {
       w-6 h-6 object-contain
       transition-transform duration-300 ease-in-out
       ${open ? "rotate-180" : "rotate-0"}
+       ${scrolled ? "invert" : "invert-0"}
       
     `}
               />
@@ -155,7 +156,7 @@ class Navbar extends Component {
 
                 <li>
                   <Link
-                    to="/signup"
+                    to="/#"
                     onClick={() => {
                       this.scrollToTop();
                       this.closeMenu();

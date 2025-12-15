@@ -29,7 +29,7 @@ export default function AboutUs() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-yellow-50  to-gray-500 py-20 px-6 lg:px-24">
+    <section className="bg-gradient-to-b from-yellow-100  to-red-100 py-20 px-6 lg:px-24">
       {/* HEADER */}
       <motion.div
         className="text-center mb-20"
@@ -142,7 +142,7 @@ export default function AboutUs() {
                 key={i}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
-                className="flex items-start gap-4 p-5 rounded-xl bg-gray-50 hover:bg-yellow-50 transition"
+                className="flex items-start gap-4 p-5 rounded-xl bg-gray-50 hover:bg-yellow-300 transition"
               >
                 <div className="text-yellow-500 text-2xl mt-1">
                   {item.icon}
@@ -173,7 +173,7 @@ export default function AboutUs() {
         {/* CONTACT */}
         <motion.div
           variants={itemVariants}
-          className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black rounded-2xl shadow-xl p-10 text-center"
+          className="bg-gradient-to-r from-purple-400 to-yellow-500 text-black rounded-2xl shadow-xl p-10 text-center"
         >
           <h2 className="text-2xl font-bold uppercase tracking-wide mb-4">
             Contact Us
