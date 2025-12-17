@@ -60,7 +60,7 @@ class Navbar extends Component {
         {/* NAVBAR */}
         <nav
           className={`
-            fixed top-0 left-0 w-full z-[1000]
+            fixed top-0 left-0 w-full z-1000
             transition-all duration-500
             ${scrolled ? "bg-white shadow-md" : "bg-transparent"}
           `}
@@ -129,7 +129,7 @@ class Navbar extends Component {
               exit={{ y: "-100%", opacity: 0 }}
               transition={{ duration: 0.45, ease: "easeOut" }}
               className="
-                fixed top-[72px] left-0 w-full z-[999]
+                fixed top-[72px] left-0 w-full z-999
                 backdrop-blur-xl bg-black/60
                 lg:hidden
               "
